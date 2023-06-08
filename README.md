@@ -36,11 +36,12 @@ conda env list
 ```
 conda create --name ENVNAME --clone base
 ```
+
 ## Import from yaml file
 ```
 conda env create -n ENVNAME --file ENV.yml
 ```
-or if the ENVNAME is already in the yml file:
+or if the ```ENVNAME``` is already in the yml file:
 ```
 conda env create -f environment.yml
 ```
@@ -119,7 +120,7 @@ conda rename -n ENVNAME NEWENVNAME
 ```
 
 # Uninstalling Anaconda distribution
-To make a clean uninstallation of the Anaconda distribution you must have installed the anaconda-clean package inside the base environment:
+To make a clean uninstallation of the Anaconda distribution you must have installed the ```anaconda-clean``` package inside the base environment:
 ```
 conda install anaconda-clean
 ```
