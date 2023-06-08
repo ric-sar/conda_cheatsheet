@@ -105,7 +105,7 @@ conda list ^sci
 ```
 The output will be: name, version, build and channel (where the repository come from).
 ```
-# Name                    Version                   Build    Channel
+Name                      Version                   Build    Channel
 scikit-image              0.19.3           py39hd77b12b_1
 scikit-learn              1.2.1            py39hd77b12b_0
 scikit-learn-intelex      2023.0.2         py39haa95532_0
@@ -114,7 +114,7 @@ scipy                     1.10.0           py39h321e85e_1
 If you remember only part of packagename, does not matter if the beginning, the middle or the end of ```PACKAGENAME```, just type what you remember after ```list``` command.
 The following command will show all the packages with name ```torch``` inside:
 ```
-# Name                    Version                  Build     Channel
+Name                      Version                  Build     Channel
 pytorch                   1.13.1             py3.9_cpu_0     pytorch
 pytorch-mutex             1.0                        cpu     pytorch
 torchaudio                0.13.1                py39_cpu     pytorch
@@ -127,7 +127,7 @@ conda list "(sci|num)"
 ```
 The output will be a combination of the two search:
 ```
-# Name                    Version                  Build     Channel
+Name                      Version                  Build     Channel
 pytorch                   1.13.1             py3.9_cpu_0     pytorch
 pytorch-mutex             1.0                        cpu     pytorch
 scikit-image              0.19.3          py39hd77b12b_1
