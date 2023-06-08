@@ -68,7 +68,11 @@ conda update --all
 ```
 
 # Install and uninstall package
+Conda as package manager can be useful to install or uninstall packages. Inside a conda environment you can install packages with the standard package manager for Python (```pip```).
+Let's have a look at pip and then conda:
+
 ## Using pip
+
 ```
 pip install PACKAGENAME
 ```
@@ -85,14 +89,13 @@ conda install PACKAGENAME
 ```
 conda remove PACKAGENAME
 ```
-## List all packages in the environment
-```
-pip list
-```
 
+## List all packages in the environment
+To list all the packages installed in the environment just simply use:
 ```
 conda list
 ```
+The output will be a list of packages with: name, version, build and channel (where the repository come from).
 
 ## Search package
 Sometimes you need to look for an installed package inside a specified environment. This can be achieved by using the command ```list``` followed by the ```PACKAGENAME```: 
@@ -103,7 +106,7 @@ If you don't remember the ```PACKAGENAME``` conda introduces some regex-like sea
 ```
 conda list ^sci
 ```
-The output will be: name, version, build and channel (where the repository come from).
+The output will be a list of packages with: name, version, build and channel (where the repository come from).
 ```
 Name                      Version                   Build    Channel
 scikit-image              0.19.3           py39hd77b12b_1
@@ -139,11 +142,14 @@ torchvision               0.14.1                py39_cpu     pytorch
 ```
 
 # Remove environment
+If you want to delete an environment you can use the ```remove``` command as the following:
 ```
 conda remove -n ENVNAME --all
 ```
+By applying ```--all``` you will remove all the packages related to the environment.
 
 # Rename environment
+To rename an environment just use the command ```rename``` followed by the environment you want to rename (```ENVNAME```) and the name (```NEWENVNAME```) to apply to it:
 ```
 conda rename -n ENVNAME NEWENVNAME
 ```
