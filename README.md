@@ -118,7 +118,16 @@ conda remove -n ENVNAME --all
 conda rename -n ENVNAME NEWENVNAME
 ```
 
-
- 
 # Uninstalling Anaconda distribution
-https://docs.anaconda.com/free/anaconda/install/uninstall/
+To make a clean uninstallation of the Anaconda distribution you must have installed the anaconda-clean package inside the base environment:
+```
+conda install anaconda-clean
+```
+Then, run the command:
+```
+anaconda-clean --yes
+```
+This command will create a backup of all files and directories that might be removed in a folder named ```.anaconda_backup```
+At the end of the process you can delete all the Anaconda-related folders, for envs(```anaconda3\envs```) and packages(```anaconda3\pkgs```).
+
+[Check the documentation for more details](https://docs.anaconda.com/free/anaconda/install/uninstall/)
