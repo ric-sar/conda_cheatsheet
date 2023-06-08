@@ -99,7 +99,20 @@ Sometimes you need to look for an installed package inside a specified environme
 ```
 conda list PACKAGENAME
 ```
-If you don't remember the ```PACKAGENAME``` conda introduce some regex-like search by specifing only typing part of ```PACKAGENAME```. The following command will show all the packages with name ```torch``` inside:
+If you don't remember the ```PACKAGENAME``` conda introduce some regex-like search. For example if you remember only the first letters of ```PACKAGENAME``` you can use ```list``` command followed by hyphen and the first letters. For example you look for ```sci``` packages:
+```
+conda list ^sci
+```
+
+```
+# Name                    Version                   Build    Channel
+scikit-image              0.19.3           py39hd77b12b_1
+scikit-learn              1.2.1            py39hd77b12b_0
+scikit-learn-intelex      2023.0.2         py39haa95532_0
+scipy                     1.10.0           py39h321e85e_1
+```
+
+Alternatively, if you 'by specifing only typing part of ```PACKAGENAME```. The following command will show all the packages with name ```torch``` inside:
 ```
 # Name                    Version                   Build    Channel
 pytorch                   1.13.1              py3.9_cpu_0    pytorch
