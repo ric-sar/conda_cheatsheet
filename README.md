@@ -28,9 +28,19 @@ For starters, I recommend to read first <a href="https://conda.io/projects/conda
 conda create --name ENVNAME
 ```
 ## List environments
+If you want to list all the available environments install, use the command ```env list```:
 ```
 conda env list
 ```
+This command will output all the environments and location:
+```
+# conda environments:
+base         *           C:\Users\Riccardo\anaconda3
+env_1                    C:\Users\Riccardo\anaconda3\envs\env_1
+env_2                    C:\Users\Riccardo\anaconda3\envs\env_2
+env_3                    C:\Users\Riccardo\anaconda3\envs\env_3
+```
+As you can see there is a ```*``` near the ```base environment```, this will help you to understand the environment in use in that moment.
 
 ## Clone from other environment
 ```
@@ -38,29 +48,34 @@ conda create --name ENVNAME --clone base
 ```
 
 ## Import from yaml file
+YAML is a human-readable data-serialization language mainly used as configuration file. In our case, ```.yml``` file contains all the required packages to create and reproduce an environment.
+With standard command create by imposing the ```.yml``` file path we can create a new environment as described internally in the `.yml` configuration:
 ```
 conda env create -n ENVNAME --file ENV.yml
 ```
-or if the ```ENVNAME``` is already in the yml file:
+If the ```ENVNAME``` has been already specified inside the ```.yml``` file, we can just remove the ```-n ENVNAME``` part:
 ```
 conda env create -f environment.yml
 ```
 
 # Export environment
+Sometimes you need to export your environment with all the required packages, this is extremely useful we want to setup the same environment on another pc/server/whatever.
+In this case just use the ```export``` command followed by destination path of the ```.yml``` configuration file:
 ```
 conda env export > environment.yml
 ```
 
 # Activate or deactivate environment
-To activate an environment:
+After setup many environments maybe you need a command to activate or deactivate a particular one. The commands are pretty straight forward, use ```activate``` command followed by the ```ENVNAME``` to activate an environment:
 ```
 conda activate ENVNAME
 ```
-
-To deactivate an environment:
+Instead, if you want to deactivate the environment just type ```deactivate``` command followed by the ```ENVNAME```:
 ```
 conda deactivate ENVNAME
 ```
+
+If you want to deactivate and environment and activate another one you don't really need to deactivate the environment first but you can actually activate the environment by just using the ```activate``` command, the previous environment will be deactivated. 
 
 # Update environment
 ```
