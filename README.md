@@ -14,7 +14,7 @@ For starters, I recommend to read first <a href="https://conda.io/projects/conda
 - [Export environment](#export-environment)
 - [Activate or deactivate environment](#activate-or-deactivate-environment)
 - [Update environment](#update-environment)
-- [Install and unistall package](#install-and-unistall-package)
+- [Install and uninstall package](#install-and-uninstall-package)
   * [Using pip](#using-pip)
   * [Using conda](#using-conda)
   * [List all packages in the environment](#list-all-packages-in-the-environment)
@@ -67,7 +67,7 @@ conda deactivate ENVNAME
 conda update --all
 ```
 
-# Install and unistall package
+# Install and uninstall package
 ## Using pip
 ```
 pip install PACKAGENAME
@@ -114,11 +114,11 @@ scipy                     1.10.0           py39h321e85e_1
 
 Alternatively, if you 'by specifing only typing part of ```PACKAGENAME```. The following command will show all the packages with name ```torch``` inside:
 ```
-# Name                    Version                   Build    Channel
-pytorch                   1.13.1              py3.9_cpu_0    pytorch
-pytorch-mutex             1.0                         cpu    pytorch
-torchaudio                0.13.1                 py39_cpu    pytorch
-torchvision               0.14.1                 py39_cpu    pytorch
+# Name                    Version                  Build     Channel
+pytorch                   1.13.1             py3.9_cpu_0     pytorch
+pytorch-mutex             1.0                        cpu     pytorch
+torchaudio                0.13.1                py39_cpu     pytorch
+torchvision               0.14.1                py39_cpu     pytorch
 ```
 As you can see, conda lists the name, version, build and channel (where the repository come from).
 
