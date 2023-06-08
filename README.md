@@ -94,19 +94,19 @@ conda list
 ```
 
 ## Search package
-```
-pip search PACKAGENAME
-```
-But sometimes you partially remember the package-name and you can use regex:
-```
-pip search PACKAGENAME
-```
-*** Da verificare i due comandi sopra ***
-
-In conda you don't need to specify the package name, it will use automatically regex:
+Sometimes you need to look for an installed package inside a specified environment. This can be achieved by using the command ```list``` followed by the ```PACKAGENAME```: 
 ```
 conda list PACKAGENAME
 ```
+If you don't remember the ```PACKAGENAME``` conda introduce some regex-like search by specifing only typing part of ```PACKAGENAME```. The following command will show all the packages with name ```torch``` inside:
+```
+# Name                    Version                   Build    Channel
+pytorch                   1.13.1              py3.9_cpu_0    pytorch
+pytorch-mutex             1.0                         cpu    pytorch
+torchaudio                0.13.1                 py39_cpu    pytorch
+torchvision               0.14.1                 py39_cpu    pytorch
+```
+As you can see, conda lists the name, version, build and channel (where the repository come from).
 
 # Remove environment
 ```
