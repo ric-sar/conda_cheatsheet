@@ -24,9 +24,15 @@ For starters, I recommend to read first <a href="https://conda.io/projects/conda
 - [Uninstalling Anaconda distribution](#uninstalling-anaconda-distribution)
 
 # Create new environment
+If you want to create an empty environment you can use the ```create``` command followed by the ```ENVNAME``` and specifying that you don't want any package installed:
 ```
-conda create --name ENVNAME
+conda create --name ENVNAME --no-default-packages
 ```
+Of course you can create a new environment with a specified Python version:
+```
+conda create --name ENVNAME python=3.8
+```
+
 ## List environments
 If you want to list all the available environments install, use the command ```env list```:
 ```
