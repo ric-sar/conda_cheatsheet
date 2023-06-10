@@ -125,7 +125,17 @@ To list all the packages installed in the environment just simply use:
 ```
 conda list
 ```
-The output will be a list of packages with: name, version, build and channel (where the repository come from).
+The output will be a list of packages with: name, version, build and channel (where the repository come from):
+```
+Name                      Version                     Build    Channel
+pytorch                   2.0.0    py3.10_cuda11.7_cudnn8_0    pytorch
+pytorch-cuda              11.7                   h16d0643_3    pytorch
+...
+tensorboard               2.12.2               pyhd8ed1ab_0    conda-forge
+...
+torchaudio                2.0.0                      pypi_0    pypi
+torchvision               0.15.0                     pypi_0    pypi
+```
 
 ## Search package
 Sometimes you need to look for an installed package inside a specified environment. This can be achieved by using the command ```list``` followed by the ```PACKAGENAME```: 
