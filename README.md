@@ -10,7 +10,7 @@ For starters, I recommend to read first <a href="https://conda.io/projects/conda
 - [Create new environment](#create-new-environment)
   * [List environments](#list-environments)
   * [Clone from other environment](#clone-from-other-environment)
-  * [Import from yaml file](#import-from-yaml-file)
+  * [Import from YAML file](#import-from-yaml-file)
 - [Export environment](#export-environment)
 - [Activate or deactivate environment](#activate-or-deactivate-environment)
 - [Update environment](#update-environment)
@@ -28,7 +28,7 @@ If you want to create an empty environment you can use the ```create``` command 
 ```
 conda create --name ENVNAME --no-default-packages
 ```
-Of course you can create a new environment with a specified Python version:
+Of course you can create a new environment with a specified Python version or packages to install:
 ```
 conda create --name ENVNAME python=3.8
 ```
@@ -49,11 +49,12 @@ env_3                    C:\Users\Riccardo\anaconda3\envs\env_3
 As you can see there is a ```*``` near the ```base environment```, this will help you to understand the environment in use in that moment.
 
 ## Clone from other environment
+Sometimes you have already setup an environment used as baseline and want to add new packages, this procedure can be done by cloning a specified environment. You have to use the same ```create``` command followed by the environemtn to clone with ```--clone``` command:
 ```
 conda create --name ENVNAME --clone base
 ```
 
-## Import from yaml file
+## Import from YAML file
 YAML is a human-readable data-serialization language mainly used as configuration file. In our case, ```.yml``` file contains all the required packages to create and reproduce an environment.
 With standard command create by imposing the ```.yml``` file path we can create a new environment as described internally in the `.yml` configuration:
 ```
@@ -84,31 +85,38 @@ conda deactivate ENVNAME
 If you want to deactivate and environment and activate another one you don't really need to deactivate the environment first but you can actually activate the environment by just using the ```activate``` command, the previous environment will be deactivated. 
 
 # Update environment
+Conda as package manager can update all the depencies easily with the ```update``` command:
 ```
 conda update --all
 ```
+Please note that conda will only update packages installed by conda and not the one installed by ```pip```. To upgrade a package in pip please use the following command:
+```
+pip install --upgrade PACKAGENAME
+```
+It is possible to update all the pip packages but it is not recommended due to the complexity to handle environment checks in pip.
 
 # Install and uninstall package
 Conda as package manager can be useful to install or uninstall packages. Inside a conda environment you can install packages with the standard package manager for Python (```pip```).
 Let's have a look at pip and then conda:
 
-## Using pip
-
-```
-pip install PACKAGENAME
-```
-
-```
-pip uninstall PACKAGENAME
-```
-
 ## Using conda
+Use the command ```install``` followed by the ```PACKAGENAME``` to install it:
 ```
 conda install PACKAGENAME
 ```
-
+Use the command ```remove``` followed by the ```PACKAGENAME``` to uninstall it:
 ```
 conda remove PACKAGENAME
+```
+
+## Using pip
+The same che be applied to pip package manager. Please use the ```install``` command to install a package:
+```
+pip install PACKAGENAME
+```
+Use the ```uninstall``` command followed by the ```PACKAGENAME``` to uninstall it:
+```
+pip uninstall PACKAGENAME
 ```
 
 ## List all packages in the environment
