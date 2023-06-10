@@ -1,4 +1,4 @@
-![conda_logo](https://github.com/ric-sar/conda_cheatsheet/assets/82369153/632272e9-b7a3-4b70-bff0-604977b686d8)
+![conda_logo](https://github.com/ric-sar/conda_cheatsheet/assets/82369153/27cac864-5035-461b-afb1-31d1f6347459)
 
 <div align="center">This repo is meant to be a useful non-comprehensive Conda Cheat Sheet.<br>
 For starters, I recommend to read first <a href="https://conda.io/projects/conda/en/latest/user-guide/getting-started.html">Getting started with conda</a>
