@@ -19,6 +19,7 @@ For starters, I recommend to read first <a href="https://conda.io/projects/conda
   * [Using conda](#using-conda)
   * [List all packages in the environment](#list-all-packages-in-the-environment)
   * [Search package](#search-package)
+  * [List outdated packages](#list-outdated-packages)
 - [Remove environment](#remove-environment)
 - [Rename environment](#rename-environment)
 - [Uninstalling Anaconda distribution](#uninstalling-anaconda-distribution)
@@ -38,7 +39,7 @@ If you want to list all the available environments install, use the command ```e
 ```
 conda env list
 ```
-This command will output all the environments and location:
+This command will put all the environments and location:
 ```
 # conda environments:
 base         *           C:\Users\Riccardo\anaconda3
@@ -168,6 +169,19 @@ scikit-learn-intelex      2023.0.2        py39haa95532_0
 scipy                     1.10.0          py39h321e85e_1
 torchaudio                0.13.1                py39_cpu     pytorch
 torchvision               0.14.1                py39_cpu     pytorch
+```
+
+## List outdated packages
+### Using conda
+To list all packages to update inside an environment please use the ```search``` command:
+```
+conda search --outdated
+```
+
+### Using pip
+The same apples to search for all ```pip``` installed packages:
+```
+pip list --outdated
 ```
 
 # Remove environment
