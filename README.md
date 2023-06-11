@@ -85,7 +85,7 @@ After setup many environments maybe you need a command to activate or deactivate
 ```
 conda activate $ENVNAME
 ```
-Instead, if you want to deactivate the environment just type ```deactivate``` command followed by the ```ENVNAME```:
+Instead, if you want to deactivate the environment just type ```deactivate``` command followed by the ```$ENVNAME```:
 ```
 conda deactivate $ENVNAME
 ```
