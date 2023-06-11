@@ -223,7 +223,7 @@ Then, run the command:
 ```
 anaconda-clean --yes
 ```
-This command will create a backup of all files and directories that might be removed in a folder named ```.anaconda_backup```
-At the end of the process you can delete all the Anaconda-related folders, for envs(```anaconda3\envs```) and packages(```anaconda3\pkgs```).
+This command will create a backup of all files and directories that might be removed in a folder named ```.anaconda_backup```.
+At the end of the process you can delete all the Anaconda-related folders, for envs (```anaconda3\envs```) and packages (```anaconda3\pkgs```).
 
 [Check the documentation for more details](https://docs.anaconda.com/free/anaconda/install/uninstall/)
