@@ -7,6 +7,7 @@ For starters, I recommend to read first <a href="https://conda.io/projects/conda
 ---
 
 **Table of contents**
+- [What is conda](#what-is-conda)
 - [Create new environment](#create-new-environment)
   * [List environments](#list-environments)
   * [Clone from other environment](#clone-from-other-environment)
@@ -24,14 +25,20 @@ For starters, I recommend to read first <a href="https://conda.io/projects/conda
 - [Rename environment](#rename-environment)
 - [Uninstalling Anaconda distribution](#uninstalling-anaconda-distribution)
 
+# What is conda
+Conda is a cross-platform environment and package management system. It allows you to create, delete, update, clone, import, export environments and install, uninstall, search, update packages while solving [dependency hell](https://en.wikipedia.org/wiki/Dependency_hell).
+This repo is based on [Anaconda Distribution](https://www.anaconda.com/), a popular conda distribution that contains 1,500 scientific packages, pip, Python and of course conda. You can apply the cheat sheet also on miniconda, a "smaller" version of Anaconda that contains a smaller amount of packages, pip, Python and conda.
+
+[Have a look at this comparison between Anaconda and miniconda](https://docs.conda.io/projects/conda/en/stable/user-guide/install/download.html#anaconda-or-miniconda)
+
 # Create new environment
-If you want to create an empty environment you can use the ```create``` command followed by the ```ENVNAME``` and specifying that you don't want any package installed:
+If you want to create an empty environment you can use the ```create``` command followed by the ```$ENVNAME``` and specifying that you don't want any package installed:
 ```
-conda create --name ENVNAME --no-default-packages
+conda create --name $ENVNAME --no-default-packages
 ```
 Of course you can create a new environment with a specified Python version or packages to install:
 ```
-conda create --name ENVNAME python=3.8
+conda create --name $ENVNAME python=3.8
 ```
 
 ## List environments
@@ -52,16 +59,16 @@ As you can see there is a ```*``` near the ```base environment```, this will hel
 ## Clone from other environment
 Sometimes you have already setup an environment used as baseline and want to add new packages, this procedure can be done by cloning a specified environment. You have to use the same ```create``` command followed by the environemtn to clone with ```--clone``` command:
 ```
-conda create --name ENVNAME --clone base
+conda create --name $ENVNAME --clone base
 ```
 
 ## Import from YAML file
 YAML is a human-readable data-serialization language mainly used as configuration file. In our case, ```.yml``` file contains all the required packages to create and reproduce an environment.
 With standard command create by imposing the ```.yml``` file path we can create a new environment as described internally in the `.yml` configuration:
 ```
-conda env create -n ENVNAME --file ENV.yml
+conda env create -n $ENVNAME --file $ENV.yml
 ```
-If the ```ENVNAME``` has been already specified inside the ```.yml``` file, we can just remove the ```-n ENVNAME``` part:
+If the ```$ENVNAME``` has been already specified inside the ```.yml``` file, we can just remove the ```-n $ENVNAME``` part:
 ```
 conda env create -f environment.yml
 ```
@@ -74,13 +81,13 @@ conda env export > environment.yml
 ```
 
 # Activate or deactivate environment
-After setup many environments maybe you need a command to activate or deactivate a particular one. The commands are pretty straight forward, use ```activate``` command followed by the ```ENVNAME``` to activate an environment:
+After setup many environments maybe you need a command to activate or deactivate a particular one. The commands are pretty straight forward, use ```activate``` command followed by the ```$ENVNAME``` to activate an environment:
 ```
-conda activate ENVNAME
+conda activate $ENVNAME
 ```
 Instead, if you want to deactivate the environment just type ```deactivate``` command followed by the ```ENVNAME```:
 ```
-conda deactivate ENVNAME
+conda deactivate $ENVNAME
 ```
 
 If you want to deactivate and environment and activate another one you don't really need to deactivate the environment first but you can actually activate the environment by just using the ```activate``` command, the previous environment will be deactivated. 
@@ -92,7 +99,7 @@ conda update --all
 ```
 Please note that conda will only update packages installed by conda and not the one installed by ```pip```. To upgrade a package in pip please use the following command:
 ```
-pip install --upgrade PACKAGENAME
+pip install --upgrade $PACKAGENAME
 ```
 It is possible to update all the pip packages but it is not recommended due to the complexity to handle environment checks in pip.
 
@@ -101,23 +108,23 @@ Conda as package manager can be useful to install or uninstall packages. Inside 
 Let's have a look at pip and then conda:
 
 ## Using conda
-Use the command ```install``` followed by the ```PACKAGENAME``` to install it:
+Use the command ```install``` followed by the ```$PACKAGENAME``` to install it:
 ```
-conda install PACKAGENAME
+conda install $PACKAGENAME
 ```
-Use the command ```remove``` followed by the ```PACKAGENAME``` to uninstall it:
+Use the command ```remove``` followed by the ```$PACKAGENAME``` to uninstall it:
 ```
-conda remove PACKAGENAME
+conda remove $PACKAGENAME
 ```
 
 ## Using pip
 The same che be applied to pip package manager. Please use the ```install``` command to install a package:
 ```
-pip install PACKAGENAME
+pip install $PACKAGENAME
 ```
-Use the ```uninstall``` command followed by the ```PACKAGENAME``` to uninstall it:
+Use the ```uninstall``` command followed by the ```$PACKAGENAME``` to uninstall it:
 ```
-pip uninstall PACKAGENAME
+pip uninstall $PACKAGENAME
 ```
 
 ## List all packages in the environment
@@ -138,11 +145,11 @@ torchvision               0.15.0                     pypi_0    pypi
 ```
 
 ## Search package
-Sometimes you need to look for an installed package inside a specified environment. This can be achieved by using the command ```list``` followed by the ```PACKAGENAME```: 
+Sometimes you need to look for an installed package inside a specified environment. This can be achieved by using the command ```list``` followed by the ```$PACKAGENAME```: 
 ```
-conda list PACKAGENAME
+conda list $PACKAGENAME
 ```
-If you don't remember the ```PACKAGENAME``` conda introduces some regex-like search. For example if you remember only the first letters of ```PACKAGENAME``` you can use ```list``` command followed by hyphen and the first letters. For example you look for ```sci``` packages:
+If you don't remember the ```$PACKAGENAME``` conda introduces some regex-like search. For example if you remember only the first letters of ```$PACKAGENAME``` you can use ```list``` command followed by hyphen and the first letters. For example you look for ```sci``` packages:
 ```
 conda list ^sci
 ```
@@ -154,7 +161,7 @@ scikit-learn              1.2.1            py39hd77b12b_0
 scikit-learn-intelex      2023.0.2         py39haa95532_0
 scipy                     1.10.0           py39h321e85e_1
 ```
-If you remember only part of packagename, does not matter if the beginning, the middle or the end of ```PACKAGENAME```, just type what you remember after ```list``` command.
+If you remember only part of packagename, does not matter if the beginning, the middle or the end of ```$PACKAGENAME```, just type what you remember after ```list``` command.
 The following command will show all the packages with name ```torch``` inside:
 ```
 Name                      Version                  Build     Channel
@@ -163,7 +170,7 @@ pytorch-mutex             1.0                        cpu     pytorch
 torchaudio                0.13.1                py39_cpu     pytorch
 torchvision               0.14.1                py39_cpu     pytorch
 ```
-Also, multiple ```PACKAGENAME``` search can be applied by concatenating names or part of the name with a pipe |. The following command will show all packages that contains ```sci``` and ```torch```:
+Also, multiple ```$PACKAGENAME``` search can be applied by concatenating names or part of the name with a pipe |. The following command will show all packages that contains ```sci``` and ```torch```:
 
 ```
 conda list "(sci|num)"
@@ -197,14 +204,14 @@ pip list --outdated
 # Remove environment
 If you want to delete an environment you can use the ```remove``` command as the following:
 ```
-conda remove -n ENVNAME --all
+conda remove -n $ENVNAME --all
 ```
 By applying ```--all``` you will remove all the packages related to the environment.
 
 # Rename environment
-To rename an environment just use the command ```rename``` followed by the environment you want to rename (```ENVNAME```) and the name (```NEWENVNAME```) to apply to it:
+To rename an environment just use the command ```rename``` followed by the environment you want to rename (```$ENVNAME```) and the name (```$NEW_ENVNAME```) to apply to it:
 ```
-conda rename -n ENVNAME NEWENVNAME
+conda rename -n $ENVNAME $NEW_ENVNAME
 ```
 
 # Uninstalling Anaconda distribution
